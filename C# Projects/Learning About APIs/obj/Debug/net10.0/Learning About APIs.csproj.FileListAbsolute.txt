@@ -15,3 +15,21 @@ C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.
 C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.pdb
 C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.genruntimeconfig.cache
 C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\ref\Learning About APIs.dll
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.exe
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.deps.json
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.runtimeconfig.json
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.dll
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.pdb
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\bin\Debug\net10.0\Newtonsoft.Json.dll
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.csproj.AssemblyReference.cache
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.GeneratedMSBuildEditorConfig.editorconfig
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.AssemblyInfoInputs.cache
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.AssemblyInfo.cs
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.csproj.CoreCompileInputs.cache
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.sourcelink.json
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning.E3E31D4F.Up2Date
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.dll
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\refint\Learning About APIs.dll
+h:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.pdb
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.genruntimeconfig.cache
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Learning About APIs\obj\Debug\net10.0\ref\Learning About APIs.dll

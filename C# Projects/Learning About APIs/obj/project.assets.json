@@ -51,7 +51,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Newtonsoft.json >= 13.0.4"
+      "Newtonsoft.Json >= 13.0.4"
     ]
   },
   "packageFolders": {
@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joltf\\OneDrive\\Desktop\\C# Projects\\Learning About APIs\\Learning About APIs.csproj",
+      "projectUniqueName": "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Learning About APIs\\Learning About APIs.csproj",
       "projectName": "Learning About APIs",
-      "projectPath": "C:\\Users\\joltf\\OneDrive\\Desktop\\C# Projects\\Learning About APIs\\Learning About APIs.csproj",
+      "projectPath": "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Learning About APIs\\Learning About APIs.csproj",
       "packagesPath": "C:\\Users\\joltf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joltf\\OneDrive\\Desktop\\C# Projects\\Learning About APIs\\obj\\",
+      "outputPath": "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Learning About APIs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -104,7 +104,7 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
-          "Newtonsoft.json": {
+          "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.4, )"
           }
