@@ -1,0 +1,14 @@
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\bin\Debug\net9.0\Learning JSON with C#.exe
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\bin\Debug\net9.0\Learning JSON with C#.deps.json
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\bin\Debug\net9.0\Learning JSON with C#.runtimeconfig.json
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\bin\Debug\net9.0\Learning JSON with C#.dll
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\bin\Debug\net9.0\Learning JSON with C#.pdb
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\Learning JSON with C#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\Learning JSON with C#.AssemblyInfoInputs.cache
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\Learning JSON with C#.AssemblyInfo.cs
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\Learning JSON with C#.csproj.CoreCompileInputs.cache
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\Learning JSON with C#.dll
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\refint\Learning JSON with C#.dll
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\Learning JSON with C#.pdb
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\Learning JSON with C#.genruntimeconfig.cache
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning JSON with C#\obj\Debug\net9.0\ref\Learning JSON with C#.dll

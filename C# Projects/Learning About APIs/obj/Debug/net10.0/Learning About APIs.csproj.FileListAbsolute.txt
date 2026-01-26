@@ -1,0 +1,17 @@
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.exe
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.deps.json
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.runtimeconfig.json
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.dll
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\bin\Debug\net10.0\Learning About APIs.pdb
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\bin\Debug\net10.0\Newtonsoft.Json.dll
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.csproj.AssemblyReference.cache
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.AssemblyInfoInputs.cache
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.AssemblyInfo.cs
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.csproj.CoreCompileInputs.cache
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning.E3E31D4F.Up2Date
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.dll
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\refint\Learning About APIs.dll
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.pdb
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\Learning About APIs.genruntimeconfig.cache
+C:\Users\joltf\OneDrive\Desktop\C# Projects\Learning About APIs\obj\Debug\net10.0\ref\Learning About APIs.dll
