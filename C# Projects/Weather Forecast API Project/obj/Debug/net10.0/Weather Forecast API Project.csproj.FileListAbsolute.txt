@@ -1,0 +1,15 @@
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\bin\Debug\net10.0\Weather Forecast API Project.exe
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\bin\Debug\net10.0\Weather Forecast API Project.deps.json
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\bin\Debug\net10.0\Weather Forecast API Project.runtimeconfig.json
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\bin\Debug\net10.0\Weather Forecast API Project.dll
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\bin\Debug\net10.0\Weather Forecast API Project.pdb
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\Weather Forecast API Project.GeneratedMSBuildEditorConfig.editorconfig
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\Weather Forecast API Project.AssemblyInfoInputs.cache
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\Weather Forecast API Project.AssemblyInfo.cs
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\Weather Forecast API Project.csproj.CoreCompileInputs.cache
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\Weather Forecast API Project.sourcelink.json
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\Weather Forecast API Project.dll
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\refint\Weather Forecast API Project.dll
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\Weather Forecast API Project.pdb
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\Weather Forecast API Project.genruntimeconfig.cache
+H:\Github_Projects\C-Sharp-Projects\C# Projects\Weather Forecast API Project\obj\Debug\net10.0\ref\Weather Forecast API Project.dll

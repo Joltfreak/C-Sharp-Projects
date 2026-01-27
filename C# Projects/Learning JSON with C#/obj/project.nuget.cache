@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2henZ6E6hj4=",
+  "dgSpecHash": "wVtk6I/OKwg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\joltf\\OneDrive\\Desktop\\C# Projects\\Learning JSON with C#\\Learning JSON with C#.csproj",
+  "projectFilePath": "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Learning JSON with C#\\Learning JSON with C#.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joltf\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.12\\microsoft.netcore.app.ref.9.0.12.nupkg.sha512",
     "C:\\Users\\joltf\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.12\\microsoft.windowsdesktop.app.ref.9.0.12.nupkg.sha512",
