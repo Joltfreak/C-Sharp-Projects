@@ -1,0 +1,15 @@
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\bin\Debug\net10.0\Dungeon Crawler Project.exe
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\bin\Debug\net10.0\Dungeon Crawler Project.deps.json
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\bin\Debug\net10.0\Dungeon Crawler Project.runtimeconfig.json
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\bin\Debug\net10.0\Dungeon Crawler Project.dll
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\bin\Debug\net10.0\Dungeon Crawler Project.pdb
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\Dungeon Crawler Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\Dungeon Crawler Project.AssemblyInfoInputs.cache
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\Dungeon Crawler Project.AssemblyInfo.cs
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\Dungeon Crawler Project.csproj.CoreCompileInputs.cache
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\Dungeon Crawler Project.sourcelink.json
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\Dungeon Crawler Project.dll
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\refint\Dungeon Crawler Project.dll
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\Dungeon Crawler Project.pdb
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\Dungeon Crawler Project.genruntimeconfig.cache
+C:\Users\gkingsborough\Documents\GitHub\C-Sharp-Projects\C# Projects\Dungeon Crawler Project\obj\Debug\net10.0\ref\Dungeon Crawler Project.dll

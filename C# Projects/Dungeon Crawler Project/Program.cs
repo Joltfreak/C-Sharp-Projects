@@ -17,9 +17,11 @@ class Program
 
     static void ShowMainMenu()
     {
+        Console.Clear();
         Console.WriteLine("Welcome to the Dungeon Crawler Project Version 1.0 \n");
         Console.WriteLine("1: Start Game");
-        Console.WriteLine("2: Exit Game");
+        Console.WriteLine("2: Exit Game\n");
+        Console.Write("Input: ");
         string? UserInput = Console.ReadLine();
         if (int.TryParse(UserInput, out int selection))
         {
@@ -38,6 +40,46 @@ class Program
     {
         GameStarted = true;
         Console.Clear(); // we clear the menu for the upcoming text
+        // the game will open up to a character creation
+        Player player = CreateCharacter();
+    }
+
+    static Player CreateCharacter()
+    {
+        // this will be the function to make a character
+        // these currently don't do anything as they don't have any stats like Mana, Dex or anything like that
+        Console.WriteLine("Choose a Class:");
+        Console.WriteLine("1: Warrior");
+        Console.WriteLine("Warrior - Good Defence, High Health, Lower Attack, Low Mana\n");
+        Console.WriteLine("2: Rogue");
+        Console.WriteLine("Rogue - Medium Defence, Medium Health, High Attack, Medium Mana\n");
+        Console.WriteLine("3: Mage");
+        Console.WriteLine("Warrior - Lowest Defence, Lowest Health, High Damage, High Mana\n");
+        Console.Write("Input: ");
+        string? UserInput = Console.ReadLine();
+        Player player;
+        if(int.TryParse(UserInput, out int selection))
+        {
+            if(selection == 1)
+            {
+                player = new Player(150, 1, 0, 15, 10, 5);
+                return player;
+            }
+            else if(selection == 2)
+            {
+                player = new Player(100, 1, 0, 25, 7, 10);
+                return player;
+            }
+            else if(selection == 3)
+            {
+                player = new Player(75, 1, 0, 20, 5, 20);
+                return player;
+            }
+        }
+        // If input is invalid or not 1, 2, or 3, repeat character creation
+        Console.Clear();
+        Console.WriteLine("Invalid selection. Please try again.");
+        return CreateCharacter();
     }
 
     // this project will be using Classes, turn based logic and more.
