@@ -1,11 +1,11 @@
-﻿
-
-namespace Dungeon_Crawler_Project;
+﻿namespace Dungeon_Crawler_Project;
 
 class Program
 {
     static bool ProgramRunning = true;
     static bool GameStarted = false;
+    static int NumberOfRooms;
+    static int CurrentRoomIndex;
     static void Main()
     {
         while(ProgramRunning)
@@ -38,10 +38,15 @@ class Program
 
     static void StartGame()
     {
+        Random random = new Random();
+        NumberOfRooms = random.Next(3, 5);
         GameStarted = true;
-        Console.Clear(); // we clear the menu for the upcoming text
-        // the game will open up to a character creation
+        Console.Clear();
         Player player = CreateCharacter();
+        if(GameStarted == true)
+        {
+            StartGameLoop();
+        }
     }
 
     static Player CreateCharacter()
@@ -54,7 +59,7 @@ class Program
         Console.WriteLine("2: Rogue");
         Console.WriteLine("Rogue - Medium Defence, Medium Health, High Attack, Medium Mana\n");
         Console.WriteLine("3: Mage");
-        Console.WriteLine("Warrior - Lowest Defence, Lowest Health, High Damage, High Mana\n");
+        Console.WriteLine("Mage - Lowest Defence, Lowest Health, High Damage, High Mana\n");
         Console.Write("Input: ");
         string? UserInput = Console.ReadLine();
         Player player;
@@ -82,12 +87,79 @@ class Program
         return CreateCharacter();
     }
 
-    // this project will be using Classes, turn based logic and more.
-    // for the beginning I want to start off by making it Console Based so just text.
-    // the idea is that we will have a dungeon crawling game where you get to choose a class that has stats
-    // then go through the dungeon and fight enemies and hopefully reach the final enemy and destroy them.
-    // as the player plays through the dungeon crawler they will get XP and loot so I need a loot table with
-    // different loot drops and chances.
+    static void StartGameLoop()
+    {
+        Room currentRoom;
+        while(GameStarted)
+        {
+            Console.Clear();
+            Console.WriteLine("As you enter you see 3 wooden doors presented to you.\n");
+            Console.WriteLine("Select the door you wish to take.");
+            Console.Write("Input: ");
+            string? playerInput = Console.ReadLine();
+            if(int.TryParse(playerInput, out int selection))
+            {
+                if(selection < 1 || selection > 3)
+                {
+                    Console.Clear();
+                    Console.WriteLine("That is an invalid choice, choose again");
+                    Console.WriteLine("\nPress any key to continue...");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    if(NumberOfRooms != CurrentRoomIndex)
+                    {
+                        CurrentRoomIndex++;
+                        Console.Clear();
+                        // we generate a room
+                        currentRoom = GenerateRoom(false);
+                        Console.WriteLine("You enter the room and see..." + currentRoom.Description);
+                        Console.WriteLine("\nPress any key to continue...");
+                        Console.ReadKey();
+                    }
+                    else if(NumberOfRooms == CurrentRoomIndex)
+                    {
+                        Console.Clear();
+                        // boss room
+                        currentRoom = GenerateRoom(true);
+                        Console.WriteLine("You enter the room and see..." + currentRoom.Description);
+                        Console.WriteLine("\nPress any key to continue...");
+                        Console.ReadKey();
+                    }
+                }
+            }   
+        }
+    }
+
+    static Room GenerateRoom(bool IsBossRoom)
+    {
+        Random RandomNum = new Random();
+        int roomIndex = RandomNum.Next(0, 3);
+
+        if(IsBossRoom)
+        {
+            Room bossRoom = new Room(RoomType.Boss, "You see a towering monster, larger and stronger than the others");
+            return bossRoom;
+        }
+        else if(roomIndex == 0) // normal enemy room
+        {
+            Room normalRoom = new Room(RoomType.Normal, "You see an enemy sitting in the center of the room");
+            return normalRoom;
+        }
+        else if(roomIndex == 1) // loot room
+        {
+            Room lootRoom = new Room(RoomType.Loot, "You see something that resembles a chest");
+            return lootRoom;
+        }
+        else if(roomIndex == 2) // elite room
+        {
+            Room eliteRoom = new Room(RoomType.Elite, "You see a strong foe, stronger than the other ones you've faced");
+            return eliteRoom;
+        }
+        
+        return GenerateRoom(IsBossRoom);
+    }
 }
 
 class Player
@@ -125,5 +197,25 @@ class Enemy
         Damage = damage;
         ArmorClass = armorClass;
         XPReward = xpReward;
+    }
+}
+
+enum RoomType
+{
+    Normal,
+    Loot,
+    Boss,
+    Elite
+}
+
+class Room
+{
+    public RoomType Type { get; set; }
+    public string? Description { get; set; }
+
+    public Room(RoomType type, string description)
+    {
+        Type = type;
+        Description = description;
     }
 }
