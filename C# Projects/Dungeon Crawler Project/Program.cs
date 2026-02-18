@@ -6,6 +6,7 @@ class Program
     static bool GameStarted = false;
     static int NumberOfRooms;
     static int CurrentRoomIndex;
+    static Player player;
     static void Main()
     {
         while(ProgramRunning)
@@ -62,7 +63,6 @@ class Program
         Console.WriteLine("Mage - Lowest Defence, Lowest Health, High Damage, High Mana\n");
         Console.Write("Input: ");
         string? UserInput = Console.ReadLine();
-        Player player;
         if(int.TryParse(UserInput, out int selection))
         {
             if(selection == 1)
@@ -132,6 +132,79 @@ class Program
         }
     }
 
+    static void HandleRoomInteraction(Room currentRoom)
+    {
+        if(currentRoom.Type == RoomType.Normal)
+        {
+            Enemy newEnemy = new Enemy("Goblin", 50, 5, 8, 10);
+        }
+        else if(currentRoom.Type == RoomType.Elite)
+        {
+            
+        }
+        else if(currentRoom.Type == RoomType.Loot)
+        {
+            
+        }
+        else if(currentRoom.Type == RoomType.Boss)
+        {
+            
+        }
+    }
+
+    static void StartCombat(Enemy currentEnemy)
+    {
+        bool PlayerDead = false;
+        bool EnemyDead = false;
+        Console.Clear();
+        Console.WriteLine("You have engaged in combat!\n");
+        Console.WriteLine("Press any key to continue");
+        Console.ReadKey();
+        while(PlayerDead == false && EnemyDead == false)
+        {
+            Console.WriteLine("Select what you would like to do.");
+            Console.WriteLine("1: Attack");
+            // will need to add other options later. This is for prototype however
+            Console.WriteLine($"\n Player Health: {player.Health}" + "   " + $"Enemy Health: {currentEnemy.Health}");
+            string? PlayersInput = Console.ReadLine();
+            if(int.TryParse(PlayersInput, out int selection))
+            {
+                if(selection == 1)
+                {
+                    Console.Clear();
+                    int currentRoll = RollDice(21);
+                    // we attack enemy
+                    Console.WriteLine($"You rolled: {currentRoll}");
+                    if(currentRoll >= currentEnemy.ArmorClass)
+                    {
+                        Console.WriteLine("You hit the enemy!");
+                        Console.WriteLine($"The enemy takes: {player.Damage} points damage!");
+                        currentEnemy.Health -= player.Damage;
+                        Console.WriteLine("Press any key to continue");
+                        Console.ReadKey();
+                        if(currentEnemy.Health <= 0)
+                        {
+                            EnemyDead = true;
+                        }
+                    }
+                    else if(currentRoll <= currentEnemy.ArmorClass)
+                    {
+                        Console.WriteLine("You attempted to hit the enemy but they dodged the attack...");
+                        Console.WriteLine("Press any key to continue");
+                        Console.ReadKey();
+                    }
+                }
+            }
+        }
+    }
+
+    static int RollDice(int MaxRoll)
+    {
+        Random Dice = new Random();
+        int attackRoll = Dice.Next(1, MaxRoll);
+        return attackRoll;
+    }
+
     static Room GenerateRoom(bool IsBossRoom)
     {
         Random RandomNum = new Random();
@@ -139,22 +212,22 @@ class Program
 
         if(IsBossRoom)
         {
-            Room bossRoom = new Room(RoomType.Boss, "You see a towering monster, larger and stronger than the others");
+            Room bossRoom = new Room(RoomType.Boss, "a towering monster, larger and stronger than the others");
             return bossRoom;
         }
         else if(roomIndex == 0) // normal enemy room
         {
-            Room normalRoom = new Room(RoomType.Normal, "You see an enemy sitting in the center of the room");
+            Room normalRoom = new Room(RoomType.Normal, "an enemy sitting in the center of the room");
             return normalRoom;
         }
         else if(roomIndex == 1) // loot room
         {
-            Room lootRoom = new Room(RoomType.Loot, "You see something that resembles a chest");
+            Room lootRoom = new Room(RoomType.Loot, "something that resembles a chest");
             return lootRoom;
         }
         else if(roomIndex == 2) // elite room
         {
-            Room eliteRoom = new Room(RoomType.Elite, "You see a strong foe, stronger than the other ones you've faced");
+            Room eliteRoom = new Room(RoomType.Elite, "a strong foe, stronger than the other ones you've faced");
             return eliteRoom;
         }
         
