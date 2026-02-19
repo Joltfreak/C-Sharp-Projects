@@ -2,11 +2,22 @@
 
 class Program
 {
+    static List<Enemy> normalEnemyPool = new List<Enemy>
+    {
+        new Enemy("Goblin", 50, 8, 10, 15),
+        new Enemy("Skeleton", 40, 10, 8, 12),
+        new Enemy("Rat", 25, 5, 6, 8),
+    };
+    static List<Enemy> eliteEnemyPool = new List<Enemy>
+    {
+        new Enemy("Orc Warrior", 80, 15, 13, 20),
+        new Enemy("Troll", 125, 20, 15, 10)
+    };
     static bool ProgramRunning = true;
     static bool GameStarted = false;
     static int NumberOfRooms;
     static int CurrentRoomIndex;
-    static Player player;
+    static Player? player;
     static void Main()
     {
         while(ProgramRunning)
@@ -43,7 +54,7 @@ class Program
         NumberOfRooms = random.Next(3, 5);
         GameStarted = true;
         Console.Clear();
-        Player player = CreateCharacter();
+        player = CreateCharacter();
         if(GameStarted == true)
         {
             StartGameLoop();
@@ -136,11 +147,11 @@ class Program
     {
         if(currentRoom.Type == RoomType.Normal)
         {
-            Enemy newEnemy = new Enemy("Goblin", 50, 5, 8, 10);
+            SelectRandomEnemy(normalEnemyPool);
         }
         else if(currentRoom.Type == RoomType.Elite)
         {
-            
+            SelectRandomEnemy(eliteEnemyPool);
         }
         else if(currentRoom.Type == RoomType.Loot)
         {
@@ -150,6 +161,13 @@ class Program
         {
             
         }
+    }
+
+    static Enemy SelectRandomEnemy(List<Enemy> enemyPool)
+    {
+        Random random = new Random();
+        int randomIndex = random.Next(0, enemyPool.Count);
+        return enemyPool[randomIndex];
     }
 
     static void StartCombat(Enemy currentEnemy)
