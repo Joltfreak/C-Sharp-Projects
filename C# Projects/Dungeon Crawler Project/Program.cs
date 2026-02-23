@@ -1,4 +1,6 @@
-﻿namespace Dungeon_Crawler_Project;
+﻿using System.Diagnostics;
+
+namespace Dungeon_Crawler_Project;
 
 class Program
 {
@@ -128,6 +130,7 @@ class Program
                         Console.WriteLine("You enter the room and see..." + currentRoom.Description);
                         Console.WriteLine("\nPress any key to continue...");
                         Console.ReadKey();
+                        HandleRoomInteraction(currentRoom);
                     }
                     else if(NumberOfRooms == CurrentRoomIndex)
                     {
@@ -137,6 +140,7 @@ class Program
                         Console.WriteLine("You enter the room and see..." + currentRoom.Description);
                         Console.WriteLine("\nPress any key to continue...");
                         Console.ReadKey();
+                        HandleRoomInteraction(currentRoom);
                     }
                 }
             }   
@@ -145,13 +149,16 @@ class Program
 
     static void HandleRoomInteraction(Room currentRoom)
     {
+        Enemy? currentEnemy = null;
         if(currentRoom.Type == RoomType.Normal)
         {
-            SelectRandomEnemy(normalEnemyPool);
+            currentEnemy = SelectRandomEnemy(normalEnemyPool);
+            StartCombat(currentEnemy);
         }
         else if(currentRoom.Type == RoomType.Elite)
         {
-            SelectRandomEnemy(eliteEnemyPool);
+            currentEnemy = SelectRandomEnemy(eliteEnemyPool);
+            StartCombat(currentEnemy);
         }
         else if(currentRoom.Type == RoomType.Loot)
         {
@@ -175,16 +182,20 @@ class Program
         bool PlayerDead = false;
         bool EnemyDead = false;
         Console.Clear();
+        Console.WriteLine($"You see a {currentEnemy.Name}");
         Console.WriteLine("You have engaged in combat!\n");
         Console.WriteLine("Press any key to continue");
         Console.ReadKey();
         while(PlayerDead == false && EnemyDead == false)
         {
+            Console.Clear();
             Console.WriteLine("Select what you would like to do.");
             Console.WriteLine("1: Attack");
             // will need to add other options later. This is for prototype however
             Console.WriteLine($"\n Player Health: {player.Health}" + "   " + $"Enemy Health: {currentEnemy.Health}");
             string? PlayersInput = Console.ReadLine();
+            
+            // first the player attacks
             if(int.TryParse(PlayersInput, out int selection))
             {
                 if(selection == 1)
@@ -203,6 +214,7 @@ class Program
                         if(currentEnemy.Health <= 0)
                         {
                             EnemyDead = true;
+                            Console.WriteLine($"You have slayed the enemy {currentEnemy.Name}");
                         }
                     }
                     else if(currentRoll <= currentEnemy.ArmorClass)
@@ -212,6 +224,29 @@ class Program
                         Console.ReadKey();
                     }
                 }
+            }
+
+            // then the enemy attacks
+            int enemyDiceRoll = RollDice(21);
+            Console.WriteLine("The enemy attacks...");
+            if(enemyDiceRoll >= player.ArmorClass)
+            {
+                Console.WriteLine($"The enemy hits with for {currentEnemy.Damage}");
+                // deal damage to player
+                player.Health -= currentEnemy.Damage;
+                if(player.Health <= 0)
+                {
+                    PlayerDead = true;
+                    Console.WriteLine("You have Died");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Enemy's attack has missed!");
+                Console.WriteLine("Press any key to continue");
+                Console.ReadKey();
             }
         }
     }

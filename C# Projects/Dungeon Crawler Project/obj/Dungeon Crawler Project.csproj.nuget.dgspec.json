@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\Dungeon Crawler Project.csproj": {}
+    "C:\\Users\\gkingsborough\\Documents\\GitHub\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\Dungeon Crawler Project.csproj": {}
   },
   "projects": {
-    "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\Dungeon Crawler Project.csproj": {
+    "C:\\Users\\gkingsborough\\Documents\\GitHub\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\Dungeon Crawler Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\Dungeon Crawler Project.csproj",
+        "projectUniqueName": "C:\\Users\\gkingsborough\\Documents\\GitHub\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\Dungeon Crawler Project.csproj",
         "projectName": "Dungeon Crawler Project",
-        "projectPath": "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\Dungeon Crawler Project.csproj",
-        "packagesPath": "C:\\Users\\joltf\\.nuget\\packages\\",
-        "outputPath": "H:\\Github_Projects\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\obj\\",
+        "projectPath": "C:\\Users\\gkingsborough\\Documents\\GitHub\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\Dungeon Crawler Project.csproj",
+        "packagesPath": "C:\\Users\\gkingsborough\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gkingsborough\\Documents\\GitHub\\C-Sharp-Projects\\C# Projects\\Dungeon Crawler Project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\joltf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\gkingsborough\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
