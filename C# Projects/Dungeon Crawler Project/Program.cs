@@ -196,55 +196,58 @@ class Program
             string? PlayersInput = Console.ReadLine();
             
             // first the player attacks
-            if(int.TryParse(PlayersInput, out int selection))
+            if(int.TryParse(PlayersInput, out int selection) && selection == 1)
             {
-                if(selection == 1)
+                Console.Clear();
+                int currentRoll = RollDice(21);
+                // we attack enemy
+                Console.WriteLine($"You rolled: {currentRoll}");
+                if(currentRoll >= currentEnemy.ArmorClass)
                 {
-                    Console.Clear();
-                    int currentRoll = RollDice(21);
-                    // we attack enemy
-                    Console.WriteLine($"You rolled: {currentRoll}");
-                    if(currentRoll >= currentEnemy.ArmorClass)
+                    Console.WriteLine("You hit the enemy!");
+                    Console.WriteLine($"The enemy takes: {player.Damage} points damage!");
+                    currentEnemy.Health -= player.Damage;
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                    if(currentEnemy.Health <= 0)
                     {
-                        Console.WriteLine("You hit the enemy!");
-                        Console.WriteLine($"The enemy takes: {player.Damage} points damage!");
-                        currentEnemy.Health -= player.Damage;
+                        EnemyDead = true;
+                        Console.WriteLine($"You have slayed the enemy {currentEnemy.Name}");
                         Console.WriteLine("Press any key to continue");
                         Console.ReadKey();
-                        if(currentEnemy.Health <= 0)
-                        {
-                            EnemyDead = true;
-                            Console.WriteLine($"You have slayed the enemy {currentEnemy.Name}");
-                        }
+                        return;
                     }
-                    else if(currentRoll <= currentEnemy.ArmorClass)
-                    {
-                        Console.WriteLine("You attempted to hit the enemy but they dodged the attack...");
-                        Console.WriteLine("Press any key to continue");
-                        Console.ReadKey();
-                    }
+                }
+                else if(currentRoll <= currentEnemy.ArmorClass)
+                {
+                    Console.WriteLine("You attempted to hit the enemy but they dodged the attack...");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
                 }
             }
 
             // then the enemy attacks
             int enemyDiceRoll = RollDice(21);
-            Console.WriteLine("The enemy attacks...");
+            Console.WriteLine($"The enemy {currentEnemy.Name} attacks...");
             if(enemyDiceRoll >= player.ArmorClass)
             {
-                Console.WriteLine($"The enemy hits with for {currentEnemy.Damage}");
+                Console.WriteLine($"The {currentEnemy.Name} hits you for {currentEnemy.Damage}");
                 // deal damage to player
                 player.Health -= currentEnemy.Damage;
+                Console.WriteLine("Press any key to continue");
+                Console.ReadKey();
                 if(player.Health <= 0)
                 {
                     PlayerDead = true;
                     Console.WriteLine("You have Died");
                     Console.WriteLine("Press any key to continue");
                     Console.ReadKey();
+                    return;
                 }
             }
             else
             {
-                Console.WriteLine("Enemy's attack has missed!");
+                Console.WriteLine($"Enemy {currentEnemy.Name}'s attack has missed!");
                 Console.WriteLine("Press any key to continue");
                 Console.ReadKey();
             }
