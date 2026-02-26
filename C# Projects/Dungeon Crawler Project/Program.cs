@@ -199,7 +199,7 @@ class Program
             if(int.TryParse(PlayersInput, out int selection) && selection == 1)
             {
                 Console.Clear();
-                int currentRoll = RollDice(21);
+                int currentRoll = RollDiceToHit(21);
                 // we attack enemy
                 Console.WriteLine($"You rolled: {currentRoll}");
                 if(currentRoll >= currentEnemy.ArmorClass)
@@ -227,7 +227,7 @@ class Program
             }
 
             // then the enemy attacks
-            int enemyDiceRoll = RollDice(21);
+            int enemyDiceRoll = RollDiceToHit(21);
             Console.WriteLine($"The enemy {currentEnemy.Name} attacks...");
             if(enemyDiceRoll >= player.ArmorClass)
             {
@@ -254,11 +254,18 @@ class Program
         }
     }
 
-    static int RollDice(int MaxRoll)
+    static int RollDiceToHit(int MaxRoll)
     {
         Random Dice = new Random();
         int attackRoll = Dice.Next(1, MaxRoll);
         return attackRoll;
+    }
+
+    static int RollDiceForDamage(int MinDamage, int MaxDamge)
+    {
+        Random Dice = new Random();
+        int attackDamage = Dice.Next(MinDamage, MaxDamge + 1);
+        return attackDamage;
     }
 
     static Room GenerateRoom(bool IsBossRoom)
