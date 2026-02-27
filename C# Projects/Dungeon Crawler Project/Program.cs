@@ -6,14 +6,14 @@ class Program
 {
     static List<Enemy> normalEnemyPool = new List<Enemy>
     {
-        new Enemy("Goblin", 50, 8, 10, 15),
-        new Enemy("Skeleton", 40, 10, 8, 12),
-        new Enemy("Rat", 25, 5, 6, 8),
+        new Enemy("Goblin", 36, 5, 6, 9, 30),
+        new Enemy("Skeleton", 24, 4, 5, 7, 20),
+        new Enemy("Rat", 15, 2, 4, 6, 10),
     };
     static List<Enemy> eliteEnemyPool = new List<Enemy>
     {
-        new Enemy("Orc Warrior", 80, 15, 13, 20),
-        new Enemy("Troll", 125, 20, 15, 10)
+        new Enemy("Orc Warrior", 60, 6, 8, 11, 80),
+        new Enemy("Troll", 80, 8, 10, 13, 100)
     };
     static bool ProgramRunning = true;
     static bool GameStarted = false;
@@ -80,17 +80,17 @@ class Program
         {
             if(selection == 1)
             {
-                player = new Player(150, 1, 0, 15, 10, 5);
+                player = new Player(150, 1, 0, 4, 6, 10, 5);
                 return player;
             }
             else if(selection == 2)
             {
-                player = new Player(100, 1, 0, 25, 7, 10);
+                player = new Player(100, 1, 0, 6, 8, 7, 10);
                 return player;
             }
             else if(selection == 3)
             {
-                player = new Player(75, 1, 0, 20, 5, 20);
+                player = new Player(75, 1, 0, 4, 8, 5, 20);
                 return player;
             }
         }
@@ -204,9 +204,10 @@ class Program
                 Console.WriteLine($"You rolled: {currentRoll}");
                 if(currentRoll >= currentEnemy.ArmorClass)
                 {
+                    int damage = RollDiceForDamage(player.MinDamage, player.MaxDamage);
                     Console.WriteLine("You hit the enemy!");
-                    Console.WriteLine($"The enemy takes: {player.Damage} points damage!");
-                    currentEnemy.Health -= player.Damage;
+                    Console.WriteLine($"The enemy takes: {damage} points damage!");
+                    currentEnemy.Health -= damage;
                     Console.WriteLine("Press any key to continue");
                     Console.ReadKey();
                     if(currentEnemy.Health <= 0)
@@ -231,9 +232,10 @@ class Program
             Console.WriteLine($"The enemy {currentEnemy.Name} attacks...");
             if(enemyDiceRoll >= player.ArmorClass)
             {
-                Console.WriteLine($"The {currentEnemy.Name} hits you for {currentEnemy.Damage}");
+                int damage = RollDiceForDamage(currentEnemy.MinDamage, currentEnemy.MaxDamage);
+                Console.WriteLine($"The {currentEnemy.Name} hits you for {damage}");
                 // deal damage to player
-                player.Health -= currentEnemy.Damage;
+                player.Health -= damage;
                 Console.WriteLine("Press any key to continue");
                 Console.ReadKey();
                 if(player.Health <= 0)
@@ -296,6 +298,85 @@ class Program
         
         return GenerateRoom(IsBossRoom);
     }
+
+    static void GenerateASCIIArt(Enemy currentEnemy)
+    {
+        if(currentEnemy.Name == "Troll")
+        {
+            string TrollASCII = @"
+                                                        ....:.                                                  
+                                          .~...  ~:                                                 
+                                         :~:      ^~                                                
+                                         ^..       ^^                                               
+                                        ::....^.. ..!^.                                             
+                                      ^^^.~7Y!^~7!^^~^                                              
+                                       ^!..... .   :::.                                             
+                                      .~.7..    .  ..:?                                             
+                                     ^~7.~^..:... .^.^?!^..::                                       
+                                   .^..!^.         . :?~ ..:^....                                   
+                                   :! .^7^.   ....  :?: ..:. :  .^^.                                
+                               .~...::..~77:.7!^^~.^!~.. .:... .::.^:^^                             
+                              .:~:....::..:::^.  .:.     .    .:..  :!^~.                           
+                              !:.:   ...            .       . :::^: .: .:...                        
+                            :!::..:. ..   .   .              .^:~~.       .^                        
+                         ^::^^..  ^.             .           ..^77:.       7:                       
+                        :J: .. . .^. .        .                .7GJ~.     .^^                       
+                      ::7. ....^!?^.          ..         ...:^^~!7?^:...  .:^                       
+                      ~:^ . ^:.^5J:  ........              ..  . .^~.  ..  . ^.                     
+                       ?^... :^75J7^^:.                           .^:   .   .!                      
+                      .!^.:.^:~!J7:                               ..~~.      ~                      
+                     :......:^^^J^           .                    .::5!:.    ~.                     
+                     ~.   ..:::^J::.                         .. .:..!5!:.    ^!                     
+                     ...  .::..!!^~:...                          ::.^?!::   ..^^...                 
+                    .      ^. :~~^:...                              .~?::^:  . .^!.                 
+                   ..    ....:?~::   .                             ...?Y:~^. .. .~~.                
+                .:~!    .:::.7Y::                                  :. ^P:^^.. ...:.~^..             
+               .~::^^...:.^:7#!                                    .:..?^.:.:  .  ...: .~           
+             .:^^.  ...:.::~5Y.    .                               ...:7!:~.      ...^^77           
+             :!J...     ..:!J7.                                    .:::!~.:.      ...:~:            
+              ^:^         ^:7J....                                 .^~^J!. :.        :7.            
+              !~  .    ....~5?^:. . ..                            .:~~!?!^:..        ^:^^.          
+              7?        ..  ~P?^.......             :            .^!7~!J7~.   .       . ::          
+     .?..:.. .!.         ...:YY?~... ... .                      .:~?!~^5?:            . .7:         
+     ^5~:.:^^?.            ..?~77~^. .......                  ..:^~!~!Y5J:.    ..      .:.:~        
+      .:!J^:~:             .:J^?:.^!^::. ...                .....:~~JP?55 ::. .:..      .:~^        
+         ^77J.              :!?7.. .~!^^^:......            ....^7!7?YJ?Y~:..~?:....      ~:        
+           ~G~      .   ..  :^~?!.   ^.::~!^^::::::........:..:~!^7?!JY~!Y!.:!!.::^^....   ~.       
+           ^~!... .. ^..!^~~!!7?Y7.      .~J!^::::.:....:...^::!7~J~!J~:^~J~:~~   :J!^...!Y!        
+           ?~??...:^^^  ?Y^^..:^!!?^      .^:....... ....   .:.?~:~^J7.  .^?~...^:.7!...~J?         
+           ^7!7  .7:.:. ~5^^. . ...::::.    .                ..!.^.?~..   .:7^:^J7^..:.!7~.         
+            .~?!..~?   .75^^.~...      .::....                .... ?.  .   .:?7!:. ..:^!            
+               :!:~?~...^YJY^^:~             .:.              . : :!        .^!:::::                
+                 .:..:!~?7!~:!~7..             .:.              . ~^         :7                     
+                     ^^:^....^^^~^..             ^^:.....       ..J:       ..~?.                    
+                     ~.~^    .~...:^::.               ....::.:::^JY:        ^!^!                    
+                     ^.~~     ^^:   .:!.                         .^~^...    ..:!:                   
+                     :^~^      :7.    .::~.                         ...::.  ...^~                   
+                     .7^^       .!  ..    ^:.                            ^..::::?                   
+                     .?~^..    . ^~...:^^  ...~:                            .~^~J^..                
+                     ^..!~^....   ~::5Y.^.:....~::                            ...    ::.            
+                     !  :.  ..    :!J5.  .  .::.^J~                                .~!!~            
+                    ::..:.        .~?!         ...~!...                            ^?               
+                   .:  ~!.     .. :7!           .  J: .                          . .7^              
+                   ~:.  .     .:::?^               .~::~7^::...                  . ..:!             
+                  ^ ^.  .:....   :?                  ...:::~~:. :.                  :.7             
+                 ::          ..  .~.                        .^^~ ..    ..         :^~:^~            
+                 ::          .^..:7:                           ~7~:.    .     .. .~Y!..             
+                 ^~.          .:~~:                              .^7:   ...  .:777??^               
+                  ~^.        . ^7.                                :?^^:.  .::.:!7~!J!               
+                  .7         ::7:                                  ...:^~~~~77~7^..5~               
+                  ~:         !7.                                     .:.:.  ..:^: ^J:               
+                  ^ ..    .::!.                                       .^7:    . .:!!?               
+                 ....      7!^                                          ?..      .^:7.  .           
+                :.         .^~                                          ~^^. ..    :7. .            
+                . .          ::                                        .:..        . ~.             
+               ^  ..          ^:                                     ..!         ... .~             
+              :Y!..   :  ..   .^!:::......                       ...:^Y^   .~:   :  ^ :~..          
+              .~!~!:.~:. .57 ...?!^::::...                        ...:J?.:.:JY^::!~:~~^^.           
+                  ...^::^^~~::^^^:.....                               .^::.. .^^::..                ";
+            Console.WriteLine(TrollASCII);
+        }
+    }
 }
 
 class Player
@@ -303,16 +384,18 @@ class Player
     public int Health { get; set;}
     public int Level { get; set;}
     public int XP { get; set;}
-    public int Damage { get; set;}
+    public int MinDamage { get; set; }
+    public int MaxDamage { get; set; }
     public int ArmorClass { get; set;}
     public int Mana { get; set;}
 
-    public Player(int health, int level, int xp, int damage, int armorclass, int mana)
+    public Player(int health, int level, int xp, int minDamage, int maxDamage, int armorclass, int mana)
     {
         Health = health;
         Level = level;
         XP = xp;
-        Damage = damage;
+        MinDamage = minDamage;
+        MaxDamage = maxDamage;
         ArmorClass = armorclass;
         Mana = mana;
     }
@@ -322,15 +405,17 @@ class Enemy
 {
     public string Name { get; set; }
     public int Health { get; set; }
-    public int Damage { get; set; }
+    public int MinDamage { get; set; }
+    public int MaxDamage { get; set; }
     public int ArmorClass { get; set; }
     public int XPReward { get; set; }
 
-    public Enemy(string name, int health, int damage, int armorClass, int xpReward)
+    public Enemy(string name, int health, int minDamage, int maxDamage, int armorClass, int xpReward)
     {
         Name = name;
         Health = health;
-        Damage = damage;
+        MinDamage = minDamage;
+        MaxDamage = maxDamage;
         ArmorClass = armorClass;
         XPReward = xpReward;
     }
